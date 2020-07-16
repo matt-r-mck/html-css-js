@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onClick="increment()" onClick="changeColor()">increment</button>
+    <input id="input" type="number" >
+    <button onClick="decrement()" onClick="changeColor()">decrement</button>
+    <script lang="javascript">
+        let counter = 0;
+        let ctrl = document.getElementById("input");
+        function increment (){
+            counter ++;
+            display();
+        }
+        function decrement (){
+            counter --;
+            display();
+        }
+        function display (){
+            input.value=counter;
+            input.style.color = (input.value%2== 0) ? "green" : "red";
+            input.style.fontWeight = (input.value%3== 0) ? "bold" : "normal";
+            input.style.fontStyle = (input.value%7== 0) ? "oblique" : "normal";
+        }
+    </script>
+</body>
+</html>

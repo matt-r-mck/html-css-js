@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input button{
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input id="inp" type="text" value="" placeholder="Enter Name">
+    <button onclick="getInput()"> Get Value From Input </button>
+    <script lang="javascript">
+        let ctrl = document.getElementById("inp");
+        ctrl.value="McKinney";
+
+        function getInput(){
+            let val = ctrl.value;
+            console.log("Value is", val);
+        }
+    </script>
+</body>
+</html>
