@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+    const productByPk = ()=>{
+        let xhr = new XMLHttpRequest();
+        xhr.responseType="json";
+        xhr.open("GET", `http://localhost:5000/api/products/${inp.value}`, true);
+        xhr.onload = () =>{
+            console.log(xhr.response);
+            display(xhr.response);
+        }
+        xhr.send();
+    };
+
+    const display = (product) => {
+            set("pid", product.id);
+            set("pnum", product.partNbr);
+            set("pname", product.name);
+            set("price", product.price);
+            set("punit", product.unit);
+            set("pvend", product.unit.vendor);
+            }
+    const set = (id,val)=>{
+        document.getElementById(id).innerText=val;
+    }
+    </script>
+</head>
+<body>
+    <input id="inp" type="number"><button onclick="productByPk()">Get</button>
+    <table>
+        <tbody id="tbody">
+            <tr>
+                <td>ID</td>
+                <td id="pid"></td>
+            </tr>
+            <tr>
+                <td>Part Number</td>
+                <td id="pnum"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td id="pname"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td id="price"></td>
+            </tr>
+            <tr>
+                <td>Unit</td>
+                <td id="punit"></td>
+            </tr>
+            <tr>
+                <td>Vendor</td>
+                <td id="pvend"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+        const userByPK = () => {
+            let xhr=new XMLHttpRequest();
+            xhr.responseType = "json";
+            xhr.open("GET", `http://localhost:5000/api/users/${inp.value}`, true);
+            xhr.onload = ()=> {
+                console.log(xhr.response);
+                display(xhr.response);
+            }
+            xhr.send();
+        };
+        const display = (user) => {
+            set("uid", user.id);
+            set("username", user.userName);
+            set("uname", user.firstName + " " + user.lastName );
+            set("uphone", user.phone);
+            set("uemail", user.email);
+            set("urev", user.isReviewer ? "Yes" : "No");
+            set("uadmin", user.isAdmin ? "Yes" : "No");
+        };
+
+        const set = (id, val) => {
+            document.getElementById(id).innerText = val;
+        };
+    </script>
+</head>
+<body>
+    <label>Enter Id:</label><Input id="inp" type="number">    <button onclick="userByPK()">Get User</button>
+        <table>
+            <tbody id="tbody">
+                <tr>
+                    <td>ID</td>
+                    <td id="uid"></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td id="username"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td id="uname"></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td id="uphone"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td id="uemail"></td>
+                </tr>
+                <tr>
+                    <td>Reviewer?</td>
+                    <td id="urev"></td>
+                </tr>
+                <tr>
+                    <td>Admin?</td>
+                    <td id="uadmin"></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

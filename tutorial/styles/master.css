@@ -1,0 +1,28 @@
+body {
+    font: normal normal normal 16pt/17.6pt arial, sans-serif;
+    background-color: lightgray;
+}
+.heading{
+    font: small-caps;
+    background-color: lightseagreen;
+    padding: 0px;
+    margin: 0px;
+}
+thead{
+    font-weight: bold;
+    text-align: center;
+}
+table tr td {
+    border:1px solid maroon;
+    border-collapse: collapse;
+    text-align: center;
+}
+#span4 {
+    font-family: 'Times New Roman', Times, serif ;
+}
+.blue {
+    color:blue;
+}
+.bold {
+    font-weight: bold;
+}

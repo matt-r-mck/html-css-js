@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+    const productsGet = ()=>{
+        let xhr = new XMLHttpRequest();
+        xhr.responseType="json";
+        xhr.open("GET", "http://localhost:5000/api/products", true);
+        xhr.onload = () =>{
+            console.log(xhr.response);
+            display(xhr.response);
+        }
+        xhr.send();
+    };
+    const display = (products) => {
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+            for (let product of products){
+                let row = "<tr>";
+                    row += `<td> ${product.id}</td>`;
+                    row += `<td> ${product.partNbr}</td>`;
+                    row += `<td> ${product.name}</td>`;
+                    row += `<td> ${product.price}</td>`;
+                    row += `<td> ${product.unit}</td>`;
+                    row += `<td> ${product.vendor.name}</td>`;
+                    row += "</tr>";
+                    tbody.innerHTML+=row;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="productsGet()">Get Products</button>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Part Number</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Unit</td>
+                <td>Vendor</td>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+</html>
