@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="js/GETproducts.js"></script>
+</head>
+<body class="p-3 mb-2 bg-secondary text-white">
+    <div><button id="btn" class="btn btn-primary" >Get Products</button></div>
+    <table >
+        <thead>
+            <tr>
+                <th><button id="id" onclick="resort(`id`)">ID</button></th>
+                <th><button id="partNbr" onclick="resort(`partNbr`)">Part Number</button></th>
+                <th><button id="name" onclick="resort(`name`)">Name</button></th>
+                <th><button id="price" onclick="resort(`price`)">Price</button></th>
+                <th><button id="unit" onclick="resort(`unit`)">Unit</button></th>
+                <th><button id="vendor" onclick="resort(`vendor`)">Vendor</button></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="js/GETvendors.js"></script>
+</head>
+<body>
+    <div><button id="btn" class="btn btn-primary" >Click Me!</button></div>
+    <table >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th><button id="code" onclick="resort(`code`)">Code</button></th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th><button id="state" onclick="resort(`state`)">State</button></th>
+                <th>Zip</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</body>
+</html>
